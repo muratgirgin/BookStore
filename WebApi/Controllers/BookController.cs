@@ -7,6 +7,8 @@ using WebApi.BookOperations.GetBooks;
 using WebApi.BookOperations.GetBookDetail;
 using WebApi.DBOperations;
 using static WebApi.BookOperations.CreateBook.CreateBookCommand;
+using WebApi.BookOperations.UpdateBook;
+using WebApi.BookOperations.DeleteBook;
 
 namespace WebApi.AddControllers 
 {
@@ -91,33 +93,38 @@ namespace WebApi.AddControllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateBook(int id, [FromBody] Book updatedBook)
+        public IActionResult UpdateBook(int id, [FromBody] UpdateBookModel updatedBook)
         {
-            var book = _context.Books.SingleOrDefault(x=> x.Id == id); 
-            if (book is null)
-                return BadRequest(); 
-
-            book.GenreId = updatedBook.GenreId != default ?  updatedBook.GenreId : book.GenreId; 
-            book.PageCount = updatedBook.PageCount != default ? updatedBook.PageCount : book.PageCount; 
-            book.PublishDate = updatedBook.PublishDate != default ? updatedBook.PublishDate : book.PublishDate; 
-            book.Title = updatedBook.Title != default ? updatedBook.Title : book.Title; 
-
-            _context.SaveChanges();
-
+            try
+            {
+                UpdateBookCommand command = new UpdateBookCommand(_context);
+                command.BookId = id; 
+                command.Model = updatedBook;
+                command.Handle();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+           
             return Ok();
         } 
 
         [HttpDelete("{id}")]
         public IActionResult DeleteBook(int id) 
         {
-            var book = _context.Books.SingleOrDefault(x=> x.Id == id); 
-            if (book is null)
-                return BadRequest();
-
-            _context.Books.Remove(book);
-            _context.SaveChanges();
-            
-            return Ok(); 
+           try
+            {
+                DeleteBookCommand command = new DeleteBookCommand(_context);
+                command.BookId = id; 
+                command.Handle();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+           
+            return Ok();
         }
     } 
 }

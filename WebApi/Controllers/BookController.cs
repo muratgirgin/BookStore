@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.BookOperations.CreateBook;
 using WebApi.BookOperations.GetBooks;
+using WebApi.BookOperations.GetBookDetail;
 using WebApi.DBOperations;
 using static WebApi.BookOperations.CreateBook.CreateBookCommand;
 
@@ -55,10 +56,21 @@ namespace WebApi.AddControllers
         }
         
         [HttpGet("{id}")]
-        public Book GetById(int id)
+        public IActionResult GetById(int id)
         {
-            var book = _context.Books.Where(book=> book.Id == id).SingleOrDefault();
-            return book;
+            BookDetailViewModel result; 
+            try
+            {
+                GetBookDetailQuery query = new GetBookDetailQuery(_context); 
+                query.BookId = id;
+                result = query.Handle(); 
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
+            return Ok(result);
         }
 
         [HttpPost]

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Qotn1FKSSaBFzPzm4O5To4rJXvcKBm1R8d6Cl5izp7KYQaju1OuV9KIb4W3wZWU/qSosUWjelfKczjEemOVREw==",
+  "dgSpecHash": "ndRRaeQ/tP6tmEPSe3lc8GyJUuMoa/YvYBdM0lFzljz9UcCE/fkJrJY8bvddnSSrnYZj3T+eStU29LqqzpNL2g==",
   "success": true,
-  "projectFilePath": "C:\\Data\\Personal\\Developer\\Tutorials\\BookStore\\webApi\\WebApi.csproj",
+  "projectFilePath": "C:\\Data\\Personal\\Developer\\Tutorials\\BookStore\\webapi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\girginm\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\girginm\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\girginm\\.nuget\\packages\\fluentvalidation\\10.3.0\\fluentvalidation.10.3.0.nupkg.sha512",
     "C:\\Users\\girginm\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\girginm\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.8\\microsoft.entityframeworkcore.5.0.8.nupkg.sha512",
     "C:\\Users\\girginm\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.8\\microsoft.entityframeworkcore.abstractions.5.0.8.nupkg.sha512",
@@ -30,12 +31,5 @@
     "C:\\Users\\girginm\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
     "C:\\Users\\girginm\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Data\\Personal\\Developer\\Tutorials\\BookStore\\webApi\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

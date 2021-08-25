@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using WebApi.BookOperations.GetBooks;
+using WebApi.Application.BookOperations.Queries.GetBooks;
 using WebApi.DBOperations;
 
-namespace WebApi.BookOperations.DeleteBook 
+namespace WebApi.Application.BookOperations.Commands.DeleteBook 
 {
     public class DeleteBookCommand 
     {

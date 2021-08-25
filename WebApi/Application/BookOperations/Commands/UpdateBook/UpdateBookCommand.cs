@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using WebApi.BookOperations.GetBooks;
+using WebApi.Application.BookOperations.Queries.GetBooks;
 using WebApi.DBOperations;
 
-namespace WebApi.BookOperations.UpdateBook 
+namespace WebApi.Application.BookOperations.Commands.UpdateBook 
 {
     public class UpdateBookCommand 
     {

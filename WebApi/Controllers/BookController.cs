@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Application.BookOperations.Commands.CreateBook;
 using WebApi.Application.BookOperations.Queries.GetBooks;
@@ -10,10 +7,9 @@ using static WebApi.Application.BookOperations.Commands.CreateBook.CreateBookCom
 using WebApi.Application.BookOperations.Commands.UpdateBook;
 using WebApi.Application.BookOperations.Commands.DeleteBook;
 using AutoMapper;
-using FluentValidation.Results;
 using FluentValidation;
 
-namespace WebApi.AddControllers 
+namespace WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]s")]

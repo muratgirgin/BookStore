@@ -8,13 +8,13 @@ using WebApi.Common;
 using WebApi.DBOperations;
 using WebApi.Entities;
 
-namespace WebApi.Application.BookOperations.Queries.GetBooks 
+namespace WebApi.Application.BookOperations.Queries.GetBooks
 {
     public class GetBooksQuery
     {
-        private readonly BookStoreDBContext _dbContext; 
+        private readonly IBookStoreDBContext _dbContext;
         private readonly IMapper _mapper;
-        public GetBooksQuery(BookStoreDBContext dbContext, IMapper mapper)
+        public GetBooksQuery(IBookStoreDBContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;
@@ -22,7 +22,7 @@ namespace WebApi.Application.BookOperations.Queries.GetBooks
 
         public List<BooksViewModel> Handle()
         {
-            var bookList = _dbContext.Books.Include(x => x.Genre).OrderBy(x=> x.Id).ToList<Book>();
+            var bookList = _dbContext.Books.Include(x => x.Genre).OrderBy(x => x.Id).ToList<Book>();
             List<BooksViewModel> vm = _mapper.Map<List<BooksViewModel>>(bookList);
 
             return vm;

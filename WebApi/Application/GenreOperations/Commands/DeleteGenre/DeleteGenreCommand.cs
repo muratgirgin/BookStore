@@ -3,26 +3,26 @@ using System.Linq;
 using WebApi.DBOperations;
 using WebApi.Entities;
 
-namespace  WebApi.Application.GenreOperations.DeleteGenre 
+namespace WebApi.Application.GenreOperations.DeleteGenre
 {
-    public class DeleteGenreCommand 
-    { 
+    public class DeleteGenreCommand
+    {
         public int GenreId { get; set; }
 
-        private readonly BookStoreDBContext _context;
+        private readonly IBookStoreDBContext _context;
 
-        public DeleteGenreCommand(BookStoreDBContext context)
+        public DeleteGenreCommand(IBookStoreDBContext context)
         {
             _context = context;
         }
 
         public void Handle()
         {
-            var genre = _context.Genres.SingleOrDefault(x => x.Id == GenreId); 
+            var genre = _context.Genres.SingleOrDefault(x => x.Id == GenreId);
             if (genre is null)
-                throw new InvalidOperationException("GenreId not found!"); 
-            
-            _context.Genres.Remove(genre); 
+                throw new InvalidOperationException("GenreId not found!");
+
+            _context.Genres.Remove(genre);
             _context.SaveChanges();
         }
     }

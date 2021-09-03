@@ -31,7 +31,8 @@ namespace WebApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });
             });
 
-            services.AddDbContext<BookStoreDBContext>(options=> options.UseInMemoryDatabase(databaseName: "BookStoreDB"));
+            services.AddDbContext<BookStoreDBContext>(options => options.UseInMemoryDatabase(databaseName: "BookStoreDB"));
+            services.AddScoped<IBookStoreDBContext>(provider => provider.GetService<BookStoreDBContext>());
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddSingleton<ILoggerService, DbLogger>();
         }

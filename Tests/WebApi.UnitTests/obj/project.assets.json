@@ -99,11 +99,11 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore/5.0.8": {
+      "Microsoft.EntityFrameworkCore/5.0.9": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "5.0.8",
-          "Microsoft.EntityFrameworkCore.Analyzers": "5.0.8",
+          "Microsoft.EntityFrameworkCore.Abstractions": "5.0.9",
+          "Microsoft.EntityFrameworkCore.Analyzers": "5.0.9",
           "Microsoft.Extensions.Caching.Memory": "5.0.0",
           "Microsoft.Extensions.DependencyInjection": "5.0.2",
           "Microsoft.Extensions.Logging": "5.0.0",
@@ -118,7 +118,7 @@
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/5.0.8": {
+      "Microsoft.EntityFrameworkCore.Abstractions/5.0.9": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
@@ -127,7 +127,7 @@
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/5.0.8": {
+      "Microsoft.EntityFrameworkCore.Analyzers/5.0.9": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -2386,45 +2386,45 @@
         "version.txt"
       ]
     },
-    "Microsoft.EntityFrameworkCore/5.0.8": {
-      "sha512": "UzHZDWma5jJaDMBGnfsBC1h0+1bPzAZmEGnmEMy9xdn4UkO9yvrG7m0deRazvU98Ezoa9pqi4Bsp07WR8p8HUA==",
+    "Microsoft.EntityFrameworkCore/5.0.9": {
+      "sha512": "mA+W/zpJZMp802xt2D+qBXrme4VFN+FlsrHdU6WG5HKDAnezClRksJhJicUR8XojnSPp9SgZKa1aIAasB5G67g==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/5.0.8",
+      "path": "microsoft.entityframeworkcore/5.0.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.dll",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.5.0.8.nupkg.sha512",
+        "microsoft.entityframeworkcore.5.0.9.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/5.0.8": {
-      "sha512": "twdaHC6Jy3Gzcr7qHBvgQi0q1mWJVJtrqkFcw21IFE/+1KkMTGOamV88vgPZY1NBZqnbdv1K83otDsUg9EO5ow==",
+    "Microsoft.EntityFrameworkCore.Abstractions/5.0.9": {
+      "sha512": "csbpDaXe9iQUkvDS3JZRAFfkgcRA7BlHE3u8feBLlYervmTAS1WIWPBZKMtH0a2GO5njwAABU3j+hZMCPYBrzQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/5.0.8",
+      "path": "microsoft.entityframeworkcore.abstractions/5.0.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.5.0.8.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.5.0.9.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/5.0.8": {
-      "sha512": "iXH3FyGochg9ZePG1VQwVT3YGsvhn8jmQkhi7iIKfa16xgSevpa9jhKDflFSMZ9xI9xWAsOAiG+H+pG6Jsw/3w==",
+    "Microsoft.EntityFrameworkCore.Analyzers/5.0.9": {
+      "sha512": "eyuPLRFjcF7VWH8qy1uUuMrO02W15n9EXAXnYjCTWgH0SDIeZAa2XZXMZ9U3dvOPtvllMBy0obYA5SSbnpaNoQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/5.0.8",
+      "path": "microsoft.entityframeworkcore.analyzers/5.0.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "lib/netstandard2.0/_._",
-        "microsoft.entityframeworkcore.analyzers.5.0.8.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.5.0.9.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
@@ -7260,6 +7260,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "FluentAssertions >= 6.1.0",
+      "Microsoft.EntityFrameworkCore >= 5.0.9",
       "Microsoft.NET.Test.Sdk >= 16.9.4",
       "Moq >= 4.16.1",
       "WebApi >= 1.0.0",
@@ -7275,11 +7276,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Data\\Personal\\Developer\\Tutorials\\BookStore\\Tests\\WebApi.UnitTests\\WebApi.UnitTests.csproj",
+      "projectUniqueName": "C:\\Data\\Personal\\Developer\\Tutorials\\BookStore\\Tests\\WebApi.UnitTests\\WebApi.UnitTests.csproj",
       "projectName": "WebApi.UnitTests",
-      "projectPath": "c:\\Data\\Personal\\Developer\\Tutorials\\BookStore\\Tests\\WebApi.UnitTests\\WebApi.UnitTests.csproj",
+      "projectPath": "C:\\Data\\Personal\\Developer\\Tutorials\\BookStore\\Tests\\WebApi.UnitTests\\WebApi.UnitTests.csproj",
       "packagesPath": "C:\\Users\\girginm\\.nuget\\packages\\",
-      "outputPath": "c:\\Data\\Personal\\Developer\\Tutorials\\BookStore\\Tests\\WebApi.UnitTests\\obj\\",
+      "outputPath": "C:\\Data\\Personal\\Developer\\Tutorials\\BookStore\\Tests\\WebApi.UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
@@ -7300,8 +7301,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "c:\\Data\\Personal\\Developer\\Tutorials\\BookStore\\WebApi\\WebApi.csproj": {
-              "projectPath": "c:\\Data\\Personal\\Developer\\Tutorials\\BookStore\\WebApi\\WebApi.csproj"
+            "C:\\Data\\Personal\\Developer\\Tutorials\\BookStore\\WebApi\\WebApi.csproj": {
+              "projectPath": "C:\\Data\\Personal\\Developer\\Tutorials\\BookStore\\WebApi\\WebApi.csproj"
             }
           }
         }
@@ -7319,6 +7320,10 @@
           "FluentAssertions": {
             "target": "Package",
             "version": "[6.1.0, )"
+          },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[5.0.9, )"
           },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",

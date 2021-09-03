@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZZMTZE+cnNftE0R1ct9yiIOfUk/Z7jExI7YjBDogR1JQSKNwnjRDFHaWr5XMbZGxR+wJV3bpFL0zdZiBGeFDMw==",
+  "dgSpecHash": "TbLJIsQ3QZt6A88UJMHScadyMYbJUw4nYWnf5V+peOifPC6brcFWOpmo9jeaUF/HmOsng+RpH4RxP1etWBor/g==",
   "success": true,
-  "projectFilePath": "c:\\Data\\Personal\\Developer\\Tutorials\\BookStore\\Tests\\WebApi.UnitTests\\WebApi.UnitTests.csproj",
+  "projectFilePath": "C:\\Data\\Personal\\Developer\\Tutorials\\BookStore\\Tests\\WebApi.UnitTests\\WebApi.UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\girginm\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\girginm\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
@@ -12,9 +12,9 @@
     "C:\\Users\\girginm\\.nuget\\packages\\fluentvalidation\\10.3.0\\fluentvalidation.10.3.0.nupkg.sha512",
     "C:\\Users\\girginm\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",
     "C:\\Users\\girginm\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
-    "C:\\Users\\girginm\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.8\\microsoft.entityframeworkcore.5.0.8.nupkg.sha512",
-    "C:\\Users\\girginm\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.8\\microsoft.entityframeworkcore.abstractions.5.0.8.nupkg.sha512",
-    "C:\\Users\\girginm\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.8\\microsoft.entityframeworkcore.analyzers.5.0.8.nupkg.sha512",
+    "C:\\Users\\girginm\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.9\\microsoft.entityframeworkcore.5.0.9.nupkg.sha512",
+    "C:\\Users\\girginm\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.9\\microsoft.entityframeworkcore.abstractions.5.0.9.nupkg.sha512",
+    "C:\\Users\\girginm\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.9\\microsoft.entityframeworkcore.analyzers.5.0.9.nupkg.sha512",
     "C:\\Users\\girginm\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\5.0.8\\microsoft.entityframeworkcore.inmemory.5.0.8.nupkg.sha512",
     "C:\\Users\\girginm\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\girginm\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",

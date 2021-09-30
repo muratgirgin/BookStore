@@ -14,47 +14,47 @@ namespace WebApi.Controllers
     [Route("[controller]s")]
     public class GenreController : ControllerBase
     {
-        private readonly BookStoreDBContext _context;
+        private readonly IBookStoreDBContext _context;
         private readonly IMapper _mapper;
 
-        public GenreController(BookStoreDBContext context, IMapper mapper)
+        public GenreController(IBookStoreDBContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
-        [HttpGet] 
-        public ActionResult GetGenres() 
+        [HttpGet]
+        public ActionResult GetGenres()
         {
-            GetGenresQuery query = new GetGenresQuery(_context, _mapper); 
-            var obj = query.Handle(); 
-            
+            GetGenresQuery query = new GetGenresQuery(_context, _mapper);
+            var obj = query.Handle();
+
             return Ok(obj);
         }
 
-        [HttpGet("{id}")] 
-        public ActionResult GetGenreDetail(int id) 
+        [HttpGet("{id}")]
+        public ActionResult GetGenreDetail(int id)
         {
-            GetGenreDetailQuery query = new GetGenreDetailQuery(_context, _mapper); 
-            query.GenreId = id; 
-            
-            GetGenreDetailQueryValidator validatior = new GetGenreDetailQueryValidator(); 
-            validatior.ValidateAndThrow(query); 
+            GetGenreDetailQuery query = new GetGenreDetailQuery(_context, _mapper);
+            query.GenreId = id;
 
-            var obj = query.Handle(); 
+            GetGenreDetailQueryValidator validatior = new GetGenreDetailQueryValidator();
+            validatior.ValidateAndThrow(query);
+
+            var obj = query.Handle();
             return Ok(obj);
         }
 
         [HttpPost]
-        public IActionResult AddGenre([FromBody] CreateGenreModel newGenre) 
+        public IActionResult AddGenre([FromBody] CreateGenreModel newGenre)
         {
             CreateGenreCommand command = new CreateGenreCommand(_context);
-            
+
             command.Model = newGenre;
 
             CreateGenreCommandValidator validator = new CreateGenreCommandValidator();
-            validator.ValidateAndThrow(command); 
-            command.Handle(); 
+            validator.ValidateAndThrow(command);
+            command.Handle();
 
             return Ok();
         }
@@ -63,28 +63,28 @@ namespace WebApi.Controllers
         public IActionResult UpdateGenre(int id, [FromBody] UpdateGenreModel updatedGenre)
         {
             UpdateGenreCommand command = new UpdateGenreCommand(_context);
-            command.GenreId = id; 
+            command.GenreId = id;
             command.Model = updatedGenre;
 
             UpdateGenreCommandValidator validator = new UpdateGenreCommandValidator();
-            validator.ValidateAndThrow(command); 
+            validator.ValidateAndThrow(command);
 
             command.Handle();
-           
+
             return Ok();
-        } 
+        }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteGenre(int id) 
+        public IActionResult DeleteGenre(int id)
         {
             DeleteGenreCommand command = new DeleteGenreCommand(_context);
-            command.GenreId = id; 
+            command.GenreId = id;
 
             DeleteGenreCommandValidator validator = new DeleteGenreCommandValidator();
-            validator.ValidateAndThrow(command); 
-                
+            validator.ValidateAndThrow(command);
+
             command.Handle();
-            
+
             return Ok();
         }
     }

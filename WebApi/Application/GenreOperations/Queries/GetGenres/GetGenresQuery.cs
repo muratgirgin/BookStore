@@ -1,16 +1,16 @@
-using WebApi.DBOperations; 
+using WebApi.DBOperations;
 using AutoMapper;
 using System.Linq;
 using System.Collections.Generic;
 
 namespace WebApi.Application.GenreOperations.Queries.GetGenres
 {
-    public class GetGenresQuery 
-    { 
-        public readonly BookStoreDBContext _context;
+    public class GetGenresQuery
+    {
+        public readonly IBookStoreDBContext _context;
         public readonly IMapper _mapper;
 
-        public GetGenresQuery(BookStoreDBContext context, IMapper mapper)
+        public GetGenresQuery(IBookStoreDBContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -24,7 +24,7 @@ namespace WebApi.Application.GenreOperations.Queries.GetGenres
         }
     }
 
-    public class GenresViewModel 
+    public class GenresViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

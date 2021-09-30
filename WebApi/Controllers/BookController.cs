@@ -16,9 +16,9 @@ namespace WebApi.Controllers
     public class BookController : ControllerBase
     {
         // to prevent to be overwritten (readonly) and set in the constructor (private)
-        private readonly BookStoreDBContext _context; 
+        private readonly IBookStoreDBContext _context;
         private readonly IMapper _mapper;
-        public BookController(BookStoreDBContext context, IMapper mapper)
+        public BookController(IBookStoreDBContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -28,31 +28,31 @@ namespace WebApi.Controllers
         public IActionResult GetBooks()
         {
             GetBooksQuery query = new GetBooksQuery(_context, _mapper);
-            var result = query.Handle(); 
+            var result = query.Handle();
             return Ok(result);
         }
-        
+
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            BookDetailViewModel result; 
-            GetBookDetailQuery query = new GetBookDetailQuery(_context, _mapper); 
+            BookDetailViewModel result;
+            GetBookDetailQuery query = new GetBookDetailQuery(_context, _mapper);
             query.BookId = id;
-            result = query.Handle(); 
-          
+            result = query.Handle();
+
             return Ok(result);
         }
 
         [HttpPost]
-        public IActionResult AddBook([FromBody] CreateBookModel newBook) 
+        public IActionResult AddBook([FromBody] CreateBookModel newBook)
         {
             CreateBookCommand command = new CreateBookCommand(_context, _mapper);
-            
+
             command.Model = newBook;
 
             CreateBookCommandValidator validator = new CreateBookCommandValidator();
-            validator.ValidateAndThrow(command); 
-            command.Handle(); 
+            validator.ValidateAndThrow(command);
+            command.Handle();
 
             return Ok();
         }
@@ -61,29 +61,29 @@ namespace WebApi.Controllers
         public IActionResult UpdateBook(int id, [FromBody] UpdateBookModel updatedBook)
         {
             UpdateBookCommand command = new UpdateBookCommand(_context);
-            command.BookId = id; 
+            command.BookId = id;
             command.Model = updatedBook;
 
             UpdateBookCommandValidator validator = new UpdateBookCommandValidator();
-            validator.ValidateAndThrow(command); 
+            validator.ValidateAndThrow(command);
 
             command.Handle();
-           
-            return Ok();
-        } 
 
-        [HttpDelete("{id}")]
-        public IActionResult DeleteBook(int id) 
-        {
-            DeleteBookCommand command = new DeleteBookCommand(_context);
-            command.BookId = id; 
-
-            DeleteBookCommandValidator validator = new DeleteBookCommandValidator();
-            validator.ValidateAndThrow(command); 
-                
-            command.Handle();
-            
             return Ok();
         }
-    } 
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteBook(int id)
+        {
+            DeleteBookCommand command = new DeleteBookCommand(_context);
+            command.BookId = id;
+
+            DeleteBookCommandValidator validator = new DeleteBookCommandValidator();
+            validator.ValidateAndThrow(command);
+
+            command.Handle();
+
+            return Ok();
+        }
+    }
 }

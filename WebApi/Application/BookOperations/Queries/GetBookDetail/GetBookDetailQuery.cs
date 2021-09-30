@@ -11,11 +11,11 @@ namespace WebApi.Application.BookOperations.Queries.GetBookDetail
 {
     public class GetBookDetailQuery
     {
-        private readonly BookStoreDBContext _dbContext;  
+        private readonly IBookStoreDBContext _dbContext;
         private readonly IMapper _mapper;
-        public int BookId {get; set;}
+        public int BookId { get; set; }
 
-        public GetBookDetailQuery(BookStoreDBContext dbContext, IMapper mapper)
+        public GetBookDetailQuery(IBookStoreDBContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;
@@ -23,17 +23,17 @@ namespace WebApi.Application.BookOperations.Queries.GetBookDetail
 
         public BookDetailViewModel Handle()
         {
-            var book = _dbContext.Books.Include(x => x.Genre).Where(book=> book.Id == BookId).SingleOrDefault();
+            var book = _dbContext.Books.Include(x => x.Genre).Where(book => book.Id == BookId).SingleOrDefault();
             if (book is null)
                 throw new InvalidOperationException("Book does not exist!");
 
             BookDetailViewModel vm = _mapper.Map<BookDetailViewModel>(book);
-            
+
             return vm;
         }
     }
 
-    public class BookDetailViewModel 
+    public class BookDetailViewModel
     {
         public string Title { get; set; }
         public int PageCount { get; set; }
